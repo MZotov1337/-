@@ -1,1 +1,1 @@
-ertertert
+print ("ABC")
