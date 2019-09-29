@@ -40,20 +40,50 @@ def draw_house(x = 0, y = 0, k = 1, col = "yellow"):
     Hand.setFill("White")
     Hand.draw(win)
 
-def draw_sun():
-    Sun1part = Polygon(Point(30,30), Point(80,30), Point(55,80))
-    Sun1part.setFill("Yellow")
+def draw_sun(x = 0, y = 0, k = 1, col = "yellow"):
+    Sun1part = Polygon(Point(x+k*30,y+k*30), Point(x+k*80,y+k*30), Point(x+k*55,y+k*80))
+    Sun1part.setFill(col)
 
-    Sun2part = Polygon(Point(55,17), Point(30,67.26), Point(80, 67.26))
-    Sun2part.setFill("Yellow")
+    Sun2part = Polygon(Point(x+k*55,y+k*17), Point(x+k*30,y+k*67.26), Point(x+k*80, y+k*67.26))
+    Sun2part.setFill(col)
 
-    Sun1part.setOutline("Yellow")
-    Sun2part.setOutline("Yellow")
+    Sun1part.setOutline(col)
+    Sun2part.setOutline(col)
 
     Sun1part.draw(win)
     Sun2part.draw(win)
     
+def draw_pond(x = 0, y = 0, k = 1, col = "blue"):
+    PondSide = Oval(Point(x+k*142.9,y+k*285.7), Point(x+k*367.5,y+k*367.5))
+    PondSide.setFill("Yellow")
+    PondSide.draw(win)
 
+    Pond = Oval(Point(x+k*150,y+k*300), Point(x+k*350,y+k*350))
+    Pond.setFill(col)
+    Pond.draw(win)
+    
+def dopil(x = 0, y = 0, k = 1):
+    Golova = Oval(Point(x,y), Point(x+k*30,y+k*30))
+    Golova.setFill("Orange")
+    Golova.draw(win)
+    
+    Telo = Rectangle(Point(x,y+k*30), Point(x+k*30, y+k*70))
+    Telo.setFill("Orange")
+    Telo.draw(win)
+    
+    Stvol = Rectangle(Point(x+k*50,y+k*70), Point(x+k*80, y+k*250))
+    Stvol.setFill("Brown")
+    Stvol.draw(win)
+    
+    Krona = Oval(Point(x,y+k*30), Point(x+k*130,y+k*150))
+    Krona.setFill("Green")
+    Krona.draw(win)
+    
+    Lenta = Rectangle(Point(x+k*40,y+k*180), Point(x+k*90, y+k*200))
+    Lenta.setFill("red")
+    Lenta.draw(win)
+    
+    
 Grass = Rectangle(Point(0,210), Point(400,400))
 Grass.setFill("Green")
 Grass.draw(win)
@@ -62,15 +92,10 @@ Sky = Rectangle(Point(0,0), Point(400,210))
 Sky.setFill("Light Blue")
 Sky.draw(win)
 
-PondSide = Oval(Point(142.9,285.7), Point(367.5,367.5))
-PondSide.setFill("Yellow")
-PondSide.draw(win)
-
-Pond = Oval(Point(150,300), Point(350,350))
-Pond.setFill("Blue")
-Pond.draw(win)
-
 draw_house()
+draw_sun()
+draw_pond()
+dopil(200, 200, 0.5)
 
 win.getMouse()
 win.close()
