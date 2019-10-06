@@ -29,7 +29,7 @@ Uoy=100
 
 dT=0.002
 
-r=10
+r=20
 R=20
 
 k=1000
@@ -78,8 +78,8 @@ for i in range(N):
     X1 = randint(r,width-r)
     Y1 = randint(r,height-r)
     
-    Vx = randint (-150, 150)
-    Vy = randint (-150, 150)
+    Vx = randint (-15000, 15000)
+    Vy = randint (-15000, 15000)
     
     CcVx.append(Vx)
     CcVy.append(Vy)
