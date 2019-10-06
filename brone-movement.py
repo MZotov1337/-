@@ -75,8 +75,8 @@ def nizh_stenka(y):
     return flag
 
 for i in range(N):
-    X1 = randint(0,width)
-    Y1 = randint(0,height)
+    X1 = randint(r,width-r)
+    Y1 = randint(r,height-r)
     
     Vx = randint (-150, 150)
     Vy = randint (-150, 150)
