@@ -1,6 +1,9 @@
 from graphics import *
 win = GraphWin("Wing", 400, 400)
 
+k=int(input())
+k=1/k
+
 Grass = Rectangle(Point(0,210), Point(400,400))
 Grass.setFill("Green")
 Grass.draw(win)
@@ -13,8 +16,6 @@ Sky.draw(win)
 Pipe = Rectangle(Point(130, 80), Point(160,140))
 Pipe.setFill("Black")
 Pipe.draw(win)
-
-
 
 House = Rectangle(Point(100, 150), Point(300,250))
 House.setFill("Yellow")
@@ -69,6 +70,7 @@ PondSide.draw(win)
 Pond = Oval(Point(150,300), Point(350,350))
 Pond.setFill("Blue")
 Pond.draw(win)
+
 
 win.getMouse()
 win.close()
